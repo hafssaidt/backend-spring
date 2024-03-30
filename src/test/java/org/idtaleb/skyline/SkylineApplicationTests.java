@@ -1,10 +1,10 @@
-package org.idtaleb.taskApp;
+package org.idtaleb.skyline;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ClearwayApplicationTests {
+class SkylineApplicationTests {
 
 	@Test
 	void contextLoads() {
