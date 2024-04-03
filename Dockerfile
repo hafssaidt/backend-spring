@@ -2,6 +2,6 @@ FROM maven:3.8.3-openjdk-17 AS build
 COPY . .
 RUN mvn clean package -DskipTests
 FROM openjdk:17.0.1-jdk-slim
-COPY --from=build /target/skyline-0.0.1-SNAPSHOT.jar skyline.jar
+COPY --from=build /target/skylin-0.0.1-SNAPSHOT.jar skylin.jar
 EXPOSE 8080
-ENTRYPOINT [ "java","-jar","skyline.jar" ]
+ENTRYPOINT [ "java","-jar","skylin.jar" ]
