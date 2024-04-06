@@ -7,7 +7,6 @@ import org.idtaleb.skylin.services.ProjectService;
 import org.idtaleb.skylin.services.TaskService;
 import org.idtaleb.skylin.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -24,12 +23,6 @@ public class TaskServiceImpl implements TaskService {
     KanbanItemService kanbanItemService;
     @Autowired
     ProjectService projectService;
-
-    @Scheduled(cron = "0 */13 * * * *") // Runs every 13 minutes
-    public void myTask() {
-        // Your task logic here
-        System.out.println("Scheduled Task Executed Successfully...");
-    }
 
     @Override
     public List<TaskApp> getIndependentTasks(String userId, boolean completed) {
