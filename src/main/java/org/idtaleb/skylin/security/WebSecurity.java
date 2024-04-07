@@ -24,8 +24,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.cors().and().csrf().disable().headers().frameOptions().disable().and().authorizeRequests()
-                .antMatchers(HttpMethod.POST, org.idtaleb.skylin.security.SecurityConstants.SIGN_UP_URL, org.idtaleb.skylin.security.SecurityConstants.SIGN_IN_URL).permitAll()
-                .antMatchers(org.idtaleb.skylin.security.SecurityConstants.WARMUP_URL).permitAll()
+                .antMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL, SecurityConstants.SIGN_IN_URL).permitAll()
+                .antMatchers(HttpMethod.GET,SecurityConstants.MONITOR_URL).permitAll()
                 .anyRequest().authenticated().and().addFilter(getAuthenticationFilter())
                 .addFilter(new AuthorizationFilter(authenticationManager())).sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);

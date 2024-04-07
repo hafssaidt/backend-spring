@@ -267,5 +267,15 @@ public class TaskController {
         }
     }
 
+    @GetMapping(path = "monitor", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> monitorTask() {
+        try {
+            return new ResponseEntity<>("monitor task successfully executed!", HttpStatus.OK);
+        } catch (Exception ex) {
+            return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+    }
+
+
 }
 
